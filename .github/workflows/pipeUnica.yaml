@@ -10,7 +10,7 @@ on:
   #pipe que vai rodar atraves de um push
   push:
     branches:
-      - master
+      - main
 jobs:
   #nome do job
   E2E:
