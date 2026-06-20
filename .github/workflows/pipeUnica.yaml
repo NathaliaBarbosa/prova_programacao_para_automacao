@@ -1,0 +1,42 @@
+name: 'Execução todos disparos'
+on:
+  #pipe que vai rodar manual
+  workflow_dispatch:
+
+  #pipe que vai rodar atraves de um agendamento
+  schedule:
+    - cron: '0 0 * * 6'
+  
+  #pipe que vai rodar atraves de um push
+  push:
+    branches:
+      - master
+jobs:
+  #nome do job
+  E2E:
+    runs-on: ubuntu-latest
+    
+    #passos do job
+    steps:
+    
+      - name: clonando o projeto
+        uses: actions/checkout@v4
+
+      - name: instalando o node
+        uses: actions/setup-node@v4
+        with:
+          node-version: latest
+
+      - name: instalando dependencias
+        run: npm install
+  
+      - name: executando os testes
+        run: npm run test:allure
+
+      - name: salvando o relatorio
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: relatorio de testes
+          path: allure-report/
+  
