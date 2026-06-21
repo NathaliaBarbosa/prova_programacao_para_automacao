@@ -5,7 +5,7 @@
 Para esse teste serão efetuados 5 testes no total referente a 2 métodos de uma classe
 
 ## FUNCIONAMENTO DA PIPELINE
-O item 4 é referente a abertura do relatorio gerado no final da pipeline.
+obs: O item 4 é referente a abertura do relatorio gerado no final da pipeline.
 
 1. Foi criado um arquivo yaml no projeto para configurar a pipe
 2. Neste arquivo yaml nós temos:
@@ -26,7 +26,7 @@ O item 4 é referente a abertura do relatorio gerado no final da pipeline.
     - O 5° passo é salvar o relatorio allura configurado no projeto no github
 3. Observações:
  - Não foi inserido nos steps a instalação do mocha e nem do allura pois o arquivo package.json contem as dependencias do mocha e do allura, e com isso ao rodar o step de instalar as dependencias vai ser lido esse arquivo, vai ser verificado essas dependencias e instalado as dependencias que contem nesse arquivo.
- -Outro ponto é que como o arquivo package.json não estava no gitignore e era lido durante o processo, a configuração 'type: "module"' na qual é a que estamos aprendendo para poder exportar/importar arquivos dentro do projeto não foi necessaria configurar no yaml. Pois essa configuração já estava salva no packge.json
+ - Outro ponto é que como o arquivo package.json não estava no gitignore e era lido durante o processo, a configuração 'type: "module"' na qual é a que estamos aprendendo para poder exportar/importar arquivos dentro do projeto não foi necessaria configurar no yaml. Pois essa configuração já estava salva no packge.json
 
 4. Relatorio do Allura:
  - Não consegui utilizar a action do allura que vi no github para salvar o relatorio no github pages, então para conseguir abrir o relatorio é necessario efetuar os passos abaixo:
