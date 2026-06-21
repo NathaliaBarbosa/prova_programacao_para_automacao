@@ -5,7 +5,7 @@ on:
 
   #pipe que vai rodar atraves de um agendamento
   schedule:
-    - cron: '0 1 * * 0'
+    - cron: '*/10 * * * *'
   
   #pipe que vai rodar atraves de um push
   push:
